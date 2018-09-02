@@ -1,0 +1,200 @@
+@import "base.less";
+body {
+    background-color: #ccc;
+}
+
+.layout {
+    margin: 0 auto;
+    max-width: 640px;
+    min-width: 320px;
+    background: #fff;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    max-width: 640px;
+    display: flex;
+    .logo {
+        width: 60px;
+        height: 40px;
+        display: block;
+        padding: 5px 10px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 30px;
+    }
+}
+
+// 轮播图区域样式
+#slide {
+    .swiper-slide {
+        a {
+            display: block;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .swiper-pagination-bullet {
+        opacity: 1;
+        background-color: transparent;
+        border: 1px solid #fff;
+    }
+    .swiper-pagination-bullet-active {
+        background-color: #fff;
+    }
+}
+
+// -------导航栏区域样式
+#nav {
+    padding: 10px;
+    >ul {
+        display: flex;
+        flex-wrap: wrap;
+        >li {
+            // flex:1;
+            width: 25%;
+            >a {
+                display: block;
+                text-align: center;
+                margin: 5px 0;
+                >img {
+                    width: 40px;
+                    height: 40px;
+                }
+                >p {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+#main {
+    background-color: #eee;
+    padding: 10px;
+    padding-bottom: 60px;
+}
+
+// 掌上秒杀区域样式
+#seckill {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    .seckill-title {
+        line-height: 30px;
+        height: 30px;
+        >img {
+            width: 20px;
+            height: 25px;
+            float: left;
+            margin-left: 5px;
+        }
+        .seckill-name {
+            color: @main-color;
+            font-size: 14px;
+            margin-left: 5px;
+            float: left;
+        }
+        .seckill-time {
+            float: left;
+            margin-left: 5px;
+            >span {
+                width: 15px;
+                height: 15px;
+                display: inline-block;
+                background-color: #000;
+                line-height: 15px;
+                text-align: center;
+                color: #fff;
+                &:nth-child(3n) {
+                    background: #fff;
+                    color: #000;
+                }
+            }
+        }
+        >a {
+            float: right;
+            margin-right: 5px;
+            font-size: 14px;
+        }
+    } // 秒杀内容区域
+    .seckill-content {
+        ul {
+            display: flex;
+            li {
+                flex: 1;
+                border-right: 1px solid #ccc;
+                &:last-child {
+                    border-right: none;
+                }
+                a {
+                    display: block;
+                    text-align: center;
+                    img {
+                        width: 110px;
+                    }
+                    >p {
+                        font-size: 12px;
+                        text-align: center;
+                        line-height: 20px;
+                        &:first-of-type {
+                            color: @main-color;
+                        }
+                        &:last-of-type {
+                            color: #666;
+                            padding-bottom: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 商品区域样式
+.jd-market {
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    background-color: #fff;
+    .jd-market-title {
+        border-bottom: 1px solid #ccc;
+        >h4 {
+            padding-left: 30px;
+            height: 30px;
+            line-height: 30px;
+            font-weight: normal;
+            position: relative;
+            &::before {
+                content: "";
+                width: 5px;
+                height: 15px;
+                position: absolute;
+                top: 8px;
+                left: 20px;
+                background-color: @main-color;
+            }
+        }
+    }
+    .jd-market-content {
+        display: flex;
+        .left {
+            flex: 1;
+            >a {
+                display: block;
+                >img {
+                    width: 100%;
+                }
+            }
+        }
+        .right {
+            flex: 1;
+            >a {
+                display: block;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

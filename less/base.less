@@ -1,0 +1,152 @@
+
+@main-color:rgb(222, 24, 27);
+
+
+// 样式初始化文件
+
+* {
+    margin: 0;
+    padding: 0;
+    // 移动端一般会设置盒子模型
+    box-sizing: border-box;
+    // a标签按住的高亮背景色
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}li {
+    list-style: none;
+
+}
+input{
+    // 去除输入内外边框
+    border: 0;
+    outline: 0;
+}
+a {
+    text-decoration: none;
+    color: #6666;
+}
+img{
+    // 图片默认方式不是居中
+    border:none;
+    // 设置图片居中  去掉底部的3px;
+    vertical-align: middle;
+}
+//清除一些公共的浮动
+.clearfix::after{
+    content: "";
+    display:block;
+    clear: both;
+}
+.pull-left{
+     float: left;
+}
+
+.pull-right{
+
+    float: left;
+}
+.bl{
+    border-left: 1px solid #ccc;
+}
+.br {
+    border-right: 1px solid #ccc;
+}
+.bt{
+    border-top: 1px solid #ccc;
+
+}
+.bb {
+    border-bottom: 1px solid #ccc;
+}
+
+// --------头部样式公共样式
+#header{
+
+    display: flex;
+    max-width: 640px;
+    width: 100%;
+    position: fixed;
+    background-color:rgba(0,0,0,0);
+    z-index:2;
+    top:0;
+    // 选择器匹配所有icon- 开头的类名
+    [class^="icon-"]{
+        background: url('../images/sprites.png');
+        background-size: 200px 200px;
+        background-origin: content-box;
+        background-clip: content-box;
+       
+    }
+
+    .icon-logo{
+        width: 80px;
+        height: 40px;
+        background-position: 0 -108px;
+        padding: 5px 10px;
+        display: block;
+    }
+
+    .icon-back {
+        width: 40px;
+        height: 40px;
+        background-position: -20px 0;
+        display: block;
+        padding: 10px; 
+    }
+
+    .icon-menu{
+
+        width: 40px;
+        height: 40px;
+        display: block;
+        background-position: -60px 0;
+        padding: 10px; 
+    }
+    .search-form {
+        flex: 1;
+        position: relative;
+        padding-top: 5px;
+        >.icon-search {
+            width: 20px;
+            height: 20px;
+            background: url(../images/sprites.png);
+            background-size: 200px 200px;
+            background-position: -60px -108px;
+            position: absolute;
+            top: 10px;
+            left: 5px;
+        }
+        >input {
+            height: 30px;
+            width: 100%;
+            border-radius: 15px;
+            padding-left: 30px;
+        }
+    }
+}
+
+
+
+
+//dibu公共样式
+#footer {
+    position: fixed;
+    height: 50px;
+    background-color: #fff;
+    max-width: 640px;
+    bottom: 0px;
+    width: 100%;
+    ul {
+        display: flex;
+        li {
+            flex: 1;
+            text-align: center;
+            a {
+                display: block;
+                img {
+                    width: 65px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}

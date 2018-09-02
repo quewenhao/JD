@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html{
+
+            font-size: 100px;
+        }
+
+        body{
+
+            font-size: 16px;
+        }
+        * {
+        margin: 0px;
+        padding: 0px;
+        /* 移动端一般会设置盒模型为border-box 防止边框和padding撑大盒子超出屏幕宽度出现滚动条 */
+        box-sizing: border-box;
+        /*移动端a标签按住的高亮背景色 设置透明即可*/
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    input {
+        /* 去除输入框的内外边框 */
+        border: 0;
+        outline: 0;
+    }
+    
+    img {
+        /* 去掉图片的边框 */
+        border: none;
+        /* 去掉图片底部3px的间距 */
+        vertical-align: middle;
+    }
+    
+    a {
+        color: #666;
+        text-decoration: none;
+    }
+    
+  #nav ul {
+
+      display: flex;
+      flex-wrap: wrap;
+      width: 3.75rem;
+
+  }
+    #nav ul li {
+
+        width: 0.93rem;
+        height: 0.93rem;
+    }
+    ul li a {
+
+        display: block;
+        width: 0.93rem;
+        height: 0.93rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    ul li a  img{
+            width: 0.4rem;
+            height: 0.4rem;
+    }
+    li a p {
+        font-size: 0.14rem;
+    }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="images/nav0.png" alt="">
+                    <p>京东超市</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/nav1.png" alt="">
+                    <p>京东超市</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/nav2.png" alt="">
+                    <p>京东超市</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/nav3.png" alt="">
+                    <p>京东超市</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/nav4.png" alt="">
+                    <p>京东超市</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/nav5.png" alt="">
+                    <p>京东超市</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/nav6.png" alt="">
+                    <p>京东超市</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/nav7.png" alt="">
+                    <p>京东超市</p>
+                </a>
+            </li>
+
+
+        </ul>
+
+
+    </nav>
+
+    <script>
+    window.addEventListener('resize',setHtmlFontSize)
+    setHtmlFontSize();
+
+       // 根据屏幕的宽度来改变根元素的字体大小的值
+        // 当前屏幕 / 标准的375屏幕 求得你当前屏幕是标准屏幕的多少倍  * 标准屏幕根元素的字体大小
+        // 当前屏幕的宽度 / 375 * 100
+        // 假如当前750/375 = 2 * 100 == 200px  
+        // 1. 当前屏幕的宽度
+        //获取根文档的真实宽度
+    var windowWidth = document.activeElement.offsetWidth;
+    // 封装一个设置根元素的字体大小的函数
+    function setHtmlFontSize(){
+    if (windowWidth > 580) {
+
+        windowWidth = 580;
+    }else if (windowWidth < 320) {
+
+        windowWidth = 320;
+    }
+
+
+    // 定义标准屏幕的宽度
+     var  StandardWidth = 375;
+   //定义标准屏幕下根文档的字体大小
+     var StandardHtmlFontSize = 100
+        // 当前屏幕根文档所需要的字体大小 = 根文档这是宽度 / 标准屏幕的宽度  * 标准字体大小
+       var htmlFontSize = windowWidth / StandardWidth * StandardHtmlFontSize;
+       //设置根文档的字体大小
+       document.querySelector('html').style.fontSize = htmlFontSize + 'px';
+    }
+    
+    </script>
+</body>
+</html>
